@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nanocbdrankings.com/sitemap.xml
+Sitemap: http://nanocbdrankings.com/sitemap.xml
