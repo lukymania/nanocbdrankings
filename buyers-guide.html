@@ -604,10 +604,33 @@
     .hof-score { font-size: 3rem; }
   }
 </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=Playfair+Display:wght@700;800;900&amp;display=swap" rel="stylesheet"/>
 </head>
 <body>
 
 <!-- ========== HERO SECTION ========== -->
+<header class="header" role="banner">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Nano CBD Rankings - Home">
+        <img src="assets/logo.png" alt="Nano CBD Rankings Logo - Golden Trophy with Cannabis Leaf" width="42" height="42" loading="eager"/>
+        <div>
+          <div class="logo-text">Nano CBD Rankings</div>
+          <div class="logo-tagline">The Definitive Leaderboard</div>
+        </div>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="#rankings">Rankings</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#comparison">Compare</a>
+        <a href="#methodology">Methodology</a>
+        <a href="#faq">FAQ</a>
+        <a href="buyers-guide.html">Buyer's Guide</a>
+        
+      </nav>
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector(&#39;.nav&#39;).classList.toggle(&#39;open&#39;)">☰</button>
+    </div>
+  </header>
 <section class="hero">
   <div class="container">
     <div class="hero-badge">2024-2025 Season Rankings</div>
