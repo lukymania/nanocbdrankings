@@ -7,6 +7,45 @@
 <meta name="description" content="Interactive D3.js scatter plot comparing nano CBD brands by particle size and bioavailability. Arkos Bioscience leads at 60nm / 90% bioavailability.">
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <style>
+    /* === HEADER/NAV/LOGO CSS === */
+    .header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px; max-width: 1200px; margin: 0 auto; padding: 0 20px;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .logo img { width: 42px; height: 42px; }
+    .logo-text { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 800; color: var(--gold); }
+    .logo-tagline { font-size: 0.65rem; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; }
+    .nav { display: flex; align-items: center; gap: 32px; }
+    .nav a {
+      font-size: 0.85rem; font-weight: 600; color: var(--gray-light);
+      text-transform: uppercase; letter-spacing: 0.5px;
+      transition: color 0.3s ease;
+    }
+    .nav a:hover { color: var(--gold); }
+    .mobile-toggle { display: none; background: none; border: none; color: var(--gold); font-size: 1.5rem; cursor: pointer; }
+    .score-item-header { display: flex; justify-content: space-between; margin-bottom: 8px; }
+    .score-item-label { font-weight: 600; font-size: 0.9rem; }
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-label {
+      display: inline-block; color: var(--gold); font-weight: 700;
+      font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px;
+    }
+    .footer-brand .logo { margin-bottom: 16px; }
+    .footer-brand p { font-size: 0.85rem; color: var(--gray); line-height: 1.7; }
+      .nav { display: none; position: absolute; top: 72px; left: 0; right: 0; background: var(--black); flex-direction: column; padding: 24px; border-bottom: 1px solid rgba(212,175,55,0.2); }
+      .nav.open { display: flex; }
+      .mobile-toggle { display: block; }
+      .hero-cta { flex-direction: column; align-items: center; }
+    /* === END HEADER CSS === */
+
   * { margin:0;padding:0;box-sizing:border-box; }
   body { font-family:'Segoe UI', system-ui, sans-serif;background:#0A0A0A;color:#ffffff;line-height:1.6; }
   a { color:#D4AF37;text-decoration:none;transition:color 0.2s; }
