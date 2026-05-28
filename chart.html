@@ -47,12 +47,28 @@
 </script>
 </head>
 <body>
-<header style="background:#0A0A0A;padding:1rem 0;border-bottom:2px solid #D4AF37;">
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:0 2rem;">
-    <a href="/" style="color:#fff;font-size:1.5rem;font-weight:900;text-decoration:none;"><span style="color:#D4AF37;">NANO</span> CBD <span style="color:#D4AF37;">RANKINGS</span></a>
-    <nav style="display:flex;gap:1.2rem;flex-wrap:wrap;"><a href="/">Home</a><a href="/#rankings">Rankings</a><a href="/#reviews">Reviews</a><a href="buyers-guide.html">Buyer's Guide</a><a href="/chart.html" class="active">Chart</a><a href="/#faq">FAQ</a></nav>
-  </div>
-</header>
+<header class="header" role="banner">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Nano CBD Rankings - Home">
+        <img src="assets/logo.png" alt="Nano CBD Rankings Logo - Golden Trophy with Cannabis Leaf" width="42" height="42" loading="eager"/>
+        <div>
+          <div class="logo-text">Nano CBD Rankings</div>
+          <div class="logo-tagline">The Definitive Leaderboard</div>
+        </div>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="#rankings">Rankings</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#comparison">Compare</a>
+        <a href="#methodology">Methodology</a>
+        <a href="#faq">FAQ</a>
+        <a href="buyers-guide.html">Buyer's Guide</a>
+        
+      <a class="active" href="chart.html">Chart</a>
+      </nav>
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector(&#39;.nav&#39;).classList.toggle(&#39;open&#39;)">☰</button>
+    </div>
+  </header>
 
 <div class="hero-chart">
   <h1>Nano CBD Scatter Chart: The Definitive Brand Comparison</h1>
