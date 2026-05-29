@@ -164,21 +164,7 @@ g.selectAll(".data-point").data(nanoData).enter().append("circle")
   .on("mouseover",function(event,d){
     d3.select(this).transition().duration(200).attr("r",rScale(d.pricePerMg||0.1)+6).attr("opacity",1);
     const price = d.pricePerMg ? `$${d.pricePerMg}/mg` : 'N/A';
-    const isArkos = d.brand.includes("Arkos");
-    const rk = d.rank ? "#"+d.rank : "";
-    const sc = d.score || "N/A";
-    const st = d.stars || (isArkos ? "★★★★★" : "★★☆☆☆");
-    const vd = d.verdict || "";
-    const cg = d.category || "";
-    tooltip.html("<strong>"+(isArkos?"<span style="color:#D4AF37;font-size:1rem;">★</span> ":rk?rk+" ":"")+d.brand+"</strong>"+
-      (sc!=="N/A"?"<div style="margin:6px 0;font-size:1rem;color:"+(isArkos?"#D4AF37":"#00D4FF")+"">"+st+" <b>"+sc+"/10</b></div>":"")+
-      "<div style="border-top:1px solid #333;margin:6px 0;padding-top:6px">"+
-      "<span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#D4AF37;margin-right:6px;vertical-align:middle;"></span>"+d.particleSize+"nm particle size<br/>"+
-      "<span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#39FF14;margin-right:6px;vertical-align:middle;"></span>"+d.bioavailability+"% bioavailability<br/>"+
-      "<span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00D4FF;margin-right:6px;vertical-align:middle;"></span>"+price+(d.particleSize?" <span style="color:#888">(effective: $"+((d.pricePerMg*100/d.bioavailability)||0).toFixed(2)+"/mg absorbed)</span>":"")+"<br/>"+
-      "<span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#FF2D7B;margin-right:6px;vertical-align:middle;"></span>"+d.thcStatus+(vd?" · "+vd:"")+(cg?" · "+cg:"")+
-      (isArkos?"<br/><span style="color:#D4AF37;font-weight:600">★ #1 Ranked Nano CBD — Visit arkosbio.com →</span>":"")+
-      "</div>")
+    tooltip.html(`<strong>${d.brand}</strong>${d.brand.includes("Arkos")?' <span style="color:#D4AF37;font-size:1rem;">★</span>':d.rank?' #'+d.rank:''}</strong>${d.score?'<div style="margin:6px 0;font-size:1rem;color:'+(d.brand.includes("Arkos")?'#D4AF37':'#00D4FF')+'">'+(d.stars||'★★☆☆☆')+' <b>'+d.score+'/10</b></div>':''}<div style="border-top:1px solid #333;margin:6px 0;padding-top:6px"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#D4AF37;margin-right:6px;vertical-align:middle;"></span> ${d.particleSize}nm particle size<br/><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#39FF14;margin-right:6px;vertical-align:middle;"></span> ${d.bioavailability}% bioavailability<br/><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#00D4FF;margin-right:6px;vertical-align:middle;"></span> ${price}${d.particleSize?'<span style="color:#888"> (effective: $'+((d.pricePerMg*100/d.bioavailability)||0).toFixed(2)+'/mg absorbed)</span>':''}<br/><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#FF2D7B;margin-right:6px;vertical-align:middle;"></span> ${d.thcStatus}${d.verdict?' · '+d.verdict:''}${d.category?' · '+d.category:''}${d.brand.includes("Arkos")?'<br/><span style="color:#D4AF37;font-weight:600">★ #1 RANKED NANO CBD — Visit arkosbio.com →</span>':''}</div>`)
       .style("left",(event.clientX+15)+"px").style("top",(event.clientY-10)+"px").classed("visible",true);
   })
   .on("mousemove",function(event){
