@@ -3,10 +3,138 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nano CBD Scatter Chart: The Definitive Brand Comparison</title>
+<title>Nano CBD Comparison Chart | Interactive Brand Analysis 2026</title>
 <meta name="description" content="Interactive D3.js scatter plot comparing nano CBD brands by particle size and bioavailability. Arkos Bioscience leads at 60nm / 90% bioavailability.">
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <style>
+  /* ========== INJECTED HOMEPAGE HEADER CSS ========== */
+  .header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  .header-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 72px; max-width: 1200px; margin: 0 auto; padding: 0 20px;
+  }
+  .header .logo {
+    display: flex; align-items: center; gap: 12px; text-decoration: none;
+  }
+  .header .logo img { width: 42px; height: 42px; display: block; }
+  .header .logo-text { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 800; color: #D4AF37; }
+  .header .logo-tagline { font-size: 0.65rem; color: #888888; text-transform: uppercase; letter-spacing: 1px; }
+  .header .nav { display: flex; align-items: center; gap: 28px; }
+  .header .nav a {
+    font-size: 0.85rem; font-weight: 600; color: #CCCCCC !important;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    transition: color 0.3s ease; text-decoration: none !important;
+  }
+  .header .nav a:hover { color: #D4AF37 !important; text-decoration: none !important; }
+  .header .nav a.active { color: #D4AF37 !important; }
+  .header .mobile-toggle { display: none; background: none; border: none; color: #D4AF37; font-size: 1.5rem; cursor: pointer; }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 32px; border-radius: 8px; font-weight: 700;
+    font-size: 0.95rem; transition: all 0.3s ease; cursor: pointer;
+    border: none; text-transform: uppercase; letter-spacing: 0.5px; text-decoration: none !important;
+  }
+  .btn-gold {
+    background: linear-gradient(135deg, #D4AF37 0%, #E8C547 50%, #B8962E 100%); color: #0A0A0A;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+  }
+  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 0 40px rgba(212, 175, 55, 0.5); }
+  .btn-outline {
+    background: transparent; color: #D4AF37;
+    border: 2px solid #D4AF37;
+  }
+  .btn-outline:hover { background: #D4AF37; color: #0A0A0A; }
+
+  /* Hero chart section - redesigned with gold theme */
+  .hero-chart {
+    position: relative;
+    min-height: 60vh;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 72px;
+    background: linear-gradient(135deg, #0A0A0A 0%, #141414 40%, #1B4332 100%);
+    border-bottom: 4px solid #D4AF37;
+    padding: 80px 24px 60px;
+  }
+  .hero-chart::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 40%, rgba(212,175,55,0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(27,67,50,0.15) 0%, transparent 50%);
+    animation: heroPulse 8s ease-in-out infinite;
+  }
+  @keyframes heroPulse {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.05); opacity: 1; }
+  }
+  .hero-chart-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(212, 175, 55, 0.15); border: 1px solid rgba(212, 175, 55, 0.4);
+    color: #D4AF37; padding: 8px 20px; border-radius: 50px;
+    font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 24px; position: relative; z-index: 1;
+    animation: fadeInDown 0.8s ease;
+  }
+  .hero-chart h1 {
+    font-family: 'Playfair Display', serif; font-size: 3rem;
+    font-weight: 900; line-height: 1.1; margin-bottom: 20px;
+    background: linear-gradient(135deg, #FFFFFF 0%, #D4AF37 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    position: relative; z-index: 1;
+    animation: fadeInUp 0.8s ease 0.2s both;
+  }
+  .hero-chart p {
+    font-size: 1.15rem; color: #CCCCCC; max-width: 600px;
+    margin: 0 auto 36px; line-height: 1.7;
+    position: relative; z-index: 1;
+    animation: fadeInUp 0.8s ease 0.4s both;
+  }
+  .hero-chart-cta {
+    display: flex; gap: 16px; justify-content: center;
+    position: relative; z-index: 1;
+    animation: fadeInUp 0.8s ease 0.6s both;
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Animations */
+  .animate-in {
+    opacity: 0; transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .animate-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: #0A0A0A; }
+  ::-webkit-scrollbar-thumb { background: #444444; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .header .nav { display: none; position: absolute; top: 72px; left: 0; right: 0; background: #0A0A0A; flex-direction: column; padding: 24px; border-bottom: 1px solid rgba(212,175,55,0.2); gap: 16px; z-index: 999; }
+    .header .nav.open { display: flex; }
+    .header .mobile-toggle { display: block; }
+    .header .nav .btn-gold { margin-top: 8px; justify-content: center; }
+    .hero-chart h1 { font-size: 2rem; }
+    .hero-chart { min-height: auto; padding: 60px 20px 40px; }
+    .hero-chart-cta { flex-direction: column; align-items: center; }
+  }
+  /* ========== END INJECTED HEADER CSS ========== */
+
   * { margin:0;padding:0;box-sizing:border-box; }
   body { font-family:'Segoe UI', system-ui, sans-serif;background:#0A0A0A;color:#ffffff;line-height:1.6; }
   a { color:#D4AF37;text-decoration:none;transition:color 0.2s; }
@@ -51,18 +179,45 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Dataset","name":"Nano CBD Brand Comparison Data","description":"Particle size and bioavailability comparison data for 18+ nano CBD brands","variableMeasured":["Particle Size (nm)","Bioavailability (%)","Price per mg"],"creator":{"@type":"Organization","name":"nanocbdrankings.com"},"temporalCoverage":"2026"}
 </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet"/>
 </head>
 <body>
-<header style="background:#0A0A0A;padding:1rem 0;border-bottom:2px solid #D4AF37;">
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;padding:0 2rem;">
-    <a href="/" style="color:#fff;font-size:1.5rem;font-weight:900;text-decoration:none;"><span style="color:#D4AF37;">NANO</span> CBD <span style="color:#D4AF37;">RANKINGS</span></a>
-    <nav style="display:flex;gap:1.2rem;flex-wrap:wrap;"><a href="/">Home</a><a href="/#rankings">Rankings</a><a href="/#reviews">Reviews</a><a href="buyers-guide.html">Buyer's Guide</a><a href="/chart.html" class="active">Chart</a><a href="/#faq">FAQ</a></nav>
+<!-- ===== HEADER ===== -->
+<header class="header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="Nano CBD Rankings - Home">
+      <img src="assets/logo.png" alt="Nano CBD Rankings Logo - Golden Trophy with Cannabis Leaf" width="42" height="42" loading="eager"/>
+      <div>
+        <div class="logo-text">Nano CBD Rankings</div>
+        <div class="logo-tagline">The Definitive Leaderboard</div>
+      </div>
+    </a>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#rankings">Rankings</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="buyers-guide.html">Buyer's Guide</a>
+      <a href="chart.html" class="active">Comparison Chart</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="https://www.arkosbio.com" target="_blank" rel="noopener" class="btn btn-gold" style="padding: 10px 20px; font-size: 0.75rem;">Visit Arkos</a>
+    </nav>
+    <button class="mobile-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
   </div>
 </header>
 
+<!-- ===== HERO ===== -->
 <div class="hero-chart">
-  <h1>Nano CBD Scatter Chart: The Definitive Brand Comparison</h1>
+  <div class="hero-chart-badge">
+    <span>📊</span> 2026 Nano CBD Comparison Chart
+  </div>
+  <h1>Interactive Brand Comparison</h1>
   <p>18 brands plotted on particle size vs. bioavailability. Only the top-right quadrant wins. See who made the cut.</p>
+  <div class="hero-chart-cta">
+    <a href="#chart-container" class="btn btn-gold">Explore the Chart ↓</a>
+    <a href="buyers-guide.html" class="btn btn-outline">Buyer's Guide</a>
+  </div>
 </div>
 
 <div class="container-main">
