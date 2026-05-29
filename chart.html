@@ -181,7 +181,7 @@ g.selectAll(".data-point").data(nanoData).enter().append("circle")
       ${isArkos ? '<br/><span style="color:#D4AF37;font-weight:600">👑 #1 Ranked Nano CBD — Visit arkosbio.com →</span>' : ""}
       </div>`)
       .style("left",(event.clientX+15)+"px").style("top",(event.clientY-10)+"px").classed("visible",true);
-  }))
+  })
   .on("mousemove",function(event){
     tooltip.style("left",(event.clientX+15)+"px").style("top",(event.clientY-10)+"px");
   })
