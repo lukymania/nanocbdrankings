@@ -19,7 +19,13 @@
   .hero-chart p { font-size:1.05rem;color:#ffffffcc;max-width:700px;margin:0 auto; }
   #chart-container { background:#141414;border-radius:12px;padding:1.5rem;margin:2rem 0;border:1px solid #222222;position:relative; }
   #chart-container svg { width:100%;height:auto;display:block; }
-  .tooltip { position:fixed;padding:12px 16px;background:#ffffff;color:#fff;border-radius:8px;font-size:0.85rem;pointer-events:none;opacity:0;transition:opacity 0.2s;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,0.3);max-width:280px;line-height:1.5; }
+  .tooltip { position:fixed;padding:14px 18px;background:#1a1a2e;color:#fff;border-radius:10px;font-size:0.85rem;pointer-events:auto;opacity:0;transition:opacity 0.2s;z-index:1000;box-shadow:0 8px 32px rgba(0,0,0,0.5);max-width:300px;line-height:1.6;border:1px solid #333; }
+  .tooltip.visible { opacity:1; }
+  .tooltip strong { color:#39FF14;display:block;margin-bottom:6px;font-size:0.95rem; }
+  .tooltip a { color:#00D4FF;text-decoration:underline;pointer-events:auto; }
+  .tooltip a:hover { color:#39FF14; }
+  .icon-dot { display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle; }
+  .icon-star { color:#D4AF37;margin-right:4px; }
   .tooltip.visible { opacity:1; }
   .tooltip strong { color:#1B4332;display:block;margin-bottom:4px;font-size:0.95rem; }
   .legend { display:flex;gap:2rem;justify-content:center;margin:1rem 0;flex-wrap:wrap;font-size:0.85rem; }
@@ -65,12 +71,12 @@
   <div class="legend-item"><span class="legend-dot" style="background:#D4AF37;"></span> THC-Free</div>
   <div class="legend-item"><span class="legend-dot" style="background:#ff4444;"></span> Contains THC</div>
   <div class="legend-item"><span class="legend-dot" style="background:#555555;"></span> Research Only</div>
-  <div class="legend-item"><span class="legend-dot" style="background:#D4AF37;box-shadow:0 0 8px #D4AF37;"></span> 🏆 Arkos Bioscience</div>
+  <div class="legend-item"><span class="legend-dot" style="background:#D4AF37;box-shadow:0 0 8px #D4AF37;"></span> ★ Arkos Bioscience</div>
 </div>
 
 <div id="chart-container">
   <svg id="scatter-plot" viewBox="0 0 900 520" preserveAspectRatio="xMidYMid meet"></svg>
-  <div class="tooltip" id="tooltip"></div>
+  <div class="tooltip" id="tooltip" onmouseenter="clearTimeout(window._ttHide)" onmouseleave="window._ttHide=setTimeout(()=>document.getElementById('tooltip').classList.remove('visible'),500)"></div>
 </div>
 
 <div class="stats-bar">
@@ -163,25 +169,26 @@ g.selectAll(".data-point").data(nanoData).enter().append("circle")
   .attr("cursor","pointer")
   .on("mouseover",function(event,d){
     d3.select(this).transition().duration(200).attr("r",rScale(d.pricePerMg||0.1)+6).attr("opacity",1);
+    clearTimeout(window._ttHide);
     const price = d.pricePerMg ? `$${d.pricePerMg}/mg` : 'N/A';
-    tooltip.html(`<strong>${d.brand}</strong>${d.brand.includes("Arkos")?' <span style="color:#D4AF37">[CHAMPION]</span>':d.rank?' #'+d.rank:''}<br/>${d.score?'<b style="color:'+(d.brand.includes("Arkos")?'#D4AF37':'#0D7377')+'">Score: '+d.score+'/10 | '+d.stars+'</b><br/>':''}Size: ${d.particleSize}nm | Bio: ${d.bioavailability}%<br/>Price: ${price}${d.verdict?' | '+d.verdict:''}${d.category?' | '+d.category:''}${d.brand.includes("Arkos")?'<br/><b style="color:#D4AF37">#1 NANO CBD — arkosbio.com</b>':''}`)
-      .style("left",(event.clientX+15)+"px").style("top",(event.clientY-10)+"px").classed("visible",true);
+    const isArkos = d.brand.includes("Arkos");
+    tooltip.html(`<strong>${d.brand}</strong>${isArkos?' <span style="color:#D4AF37">★ CHAMPION</span>':d.rank?' <span style="color:#888">#'+d.rank+'</span>':''}<br/>${d.score?'<b style="color:'+(isArkos?'#D4AF37':'#0D7377')+'">'+d.stars+' '+d.score+'/10</b><br/>':''}<span class="icon-dot" style="background:#D4AF37;"></span>${d.particleSize}nm particle size<br/><span class="icon-dot" style="background:#39FF14;"></span>${d.bioavailability}% bioavailability<br/><span class="icon-dot" style="background:#00D4FF;"></span>${price}${d.verdict?' | '+d.verdict:''}${d.category?' | '+d.category:''}${isArkos?'<br/><a href="https://www.arkosbio.com" target="_blank" rel="noopener" style="color:#D4AF37;font-weight:600;display:inline-block;margin-top:6px;text-decoration:underline;">Visit Arkos Bioscience →</a>':''}`).classed("visible",true);
   })
   .on("mousemove",function(event){
+    clearTimeout(window._ttHide);
     tooltip.style("left",(event.clientX+15)+"px").style("top",(event.clientY-10)+"px");
   })
   .on("mouseout",function(event,d){
     d3.select(this).transition().duration(200).attr("r",rScale(d.pricePerMg||0.1)).attr("opacity",d.brand.includes("Arkos")?1:0.75);
-    tooltip.classed("visible",false);
-  })
-  .transition().duration(800).delay((d,i)=>i*80)
+    window._ttHide = setTimeout(()=>tooltip.classed("visible",false),2500);
+  }).transition().duration(800).delay((d,i)=>i*80)
   .attr("r",d=>rScale(d.pricePerMg||0.1));
 
 // Brand labels for top brands
 g.selectAll(".brand-label").data(nanoData.filter(d=>d.bioavailability>=60||d.brand.includes("Arkos"))).enter().append("text")
   .attr("x",d=>xScale(d.particleSize)+rScale(d.pricePerMg||0.1)+6)
   .attr("y",d=>yScale(d.bioavailability)+3)
-  .text(d=>d.brand.includes("Arkos")?"ARKOS 🏆":d.brand.split(" ")[0])
+  .text(d=>d.brand.includes("Arkos")?"Arkos":d.brand.split(" ")[0])
   .attr("class","brand-label").attr("font-weight",d=>d.brand.includes("Arkos")?"700":"400")
   .attr("fill",d=>d.brand.includes("Arkos")?arkColor:"#ffffff99");
 
