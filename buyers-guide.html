@@ -17,6 +17,64 @@
 <meta name="twitter:title" content="The Ultimate Nano CBD Buyer's Guide &amp; Scorecard">
 <meta name="twitter:description" content="Only one brand scored 9.8/10. See the full nano CBD championship scorecard.">
 <style>
+/* ========== INJECTED HOMEPAGE HEADER CSS ========== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap');
+
+.header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px; max-width: 1200px; margin: 0 auto; padding: 0 20px;
+}
+.header .logo {
+  display: flex; align-items: center; gap: 12px; text-decoration: none;
+}
+.header .logo img { width: 42px; height: 42px; display: block; }
+.header .logo-text { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 800; color: #D4AF37; }
+.header .logo-tagline { font-size: 0.65rem; color: #888888; text-transform: uppercase; letter-spacing: 1px; }
+.header .nav { display: flex; align-items: center; gap: 28px; }
+.header .nav a {
+  font-size: 0.85rem; font-weight: 600; color: #CCCCCC !important;
+  text-transform: uppercase; letter-spacing: 0.5px;
+  transition: color 0.3s ease; text-decoration: none !important;
+}
+.header .nav a:hover { color: #D4AF37 !important; text-decoration: none; }
+.header .logo { color: inherit; }
+.header .logo:hover { text-decoration: none; }
+.header .mobile-toggle { display: none; background: none; border: none; color: #D4AF37; font-size: 1.5rem; cursor: pointer; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 32px; border-radius: 8px; font-weight: 700;
+  font-size: 0.95rem; transition: all 0.3s ease; cursor: pointer;
+  border: none; text-transform: uppercase; letter-spacing: 0.5px; text-decoration: none;
+}
+.btn-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #E8C547 50%, #B8962E 100%); color: #0A0A0A;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+}
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 0 40px rgba(212, 175, 55, 0.5); }
+
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header .nav { display: none; position: absolute; top: 72px; left: 0; right: 0; background: #0A0A0A; flex-direction: column; padding: 24px; border-bottom: 1px solid rgba(212,175,55,0.2); gap: 16px; }
+  .header .nav.open { display: flex; }
+  .header .mobile-toggle { display: block; }
+  .header .nav .btn-gold { margin-top: 8px; justify-content: center; }
+}
+/* ========== END INJECTED HEADER CSS ========== */
+
   :root {
     --black: #0A0A0A;
     --gold: #D4AF37;
@@ -609,28 +667,30 @@
 </head>
 <body>
 
-<!-- ========== HERO SECTION ========== -->
+<!-- ========== HEADER ========== -->
 <header class="header" role="banner">
-    <div class="header-inner">
-      <a href="/" class="logo" aria-label="Nano CBD Rankings - Home">
-        <img src="assets/logo.png" alt="Nano CBD Rankings Logo - Golden Trophy with Cannabis Leaf" width="42" height="42" loading="eager"/>
-        <div>
-          <div class="logo-text">Nano CBD Rankings</div>
-          <div class="logo-tagline">The Definitive Leaderboard</div>
-        </div>
-      </a>
-      <nav class="nav" role="navigation" aria-label="Main navigation">
-        <a href="#rankings">Rankings</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#comparison">Compare</a>
-        <a href="#methodology">Methodology</a>
-        <a href="#faq">FAQ</a>
-        <a href="buyers-guide.html">Buyer's Guide</a>
-        
-      </nav>
-      <button class="mobile-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector(&#39;.nav&#39;).classList.toggle(&#39;open&#39;)">☰</button>
-    </div>
-  </header>
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="Nano CBD Rankings - Home">
+      <img src="assets/logo.png" alt="Nano CBD Rankings Logo - Golden Trophy with Cannabis Leaf" width="42" height="42" loading="eager"/>
+      <div>
+        <div class="logo-text">Nano CBD Rankings</div>
+        <div class="logo-tagline">The Definitive Leaderboard</div>
+      </div>
+    </a>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#rankings">Rankings</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="buyers-guide.html">Buyer's Guide</a>
+      <a href="chart.html">Comparison Chart</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="https://www.arkosbio.com" target="_blank" rel="noopener" class="btn btn-gold" style="padding: 10px 20px; font-size: 0.75rem;">Visit Arkos</a>
+    </nav>
+    <button class="mobile-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+  </div>
+</header>
+
+<!-- ========== HERO SECTION ========== -->
 <section class="hero">
   <div class="container">
     <div class="hero-badge">2024-2025 Season Rankings</div>
@@ -811,7 +871,6 @@
       <p style="color:var(--gray);margin-bottom:16px;">Each product receives a weighted composite score out of 10. Here's the formula that determines every ranking:</p>
       <ul>
         <li><span>Particle Size (30%)</span> <span>0-10 pts &times; 0.30</span></li>
-        <li><a href="chart.html">Chart</a></li>
         <li><span>Bioavailability (25%)</span> <span>0-10 pts &times; 0.25</span></li>
         <li><span>Lab Testing (20%)</span> <span>0-10 pts &times; 0.20</span></li>
         <li><span>Price Per Effective mg (15%)</span> <span>0-10 pts &times; 0.15</span></li>
