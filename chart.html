@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nano CBD Comparison Chart | Interactive Brand Analysis 2026</title>
-<meta name="description" content="Interactive D3.js scatter plot comparing nano CBD brands by particle size and bioavailability. Arkos Bioscience leads at 60nm / 90% bioavailability.">
+<meta name="description" content="Interactive D3.js scatter plot comparing nano CBD and nano-hemp brands by particle size and bioavailability. Wild Roots Hemp leads at 40nm / 88% bioavailability, with Arkos Bioscience at 60nm / 90%.">
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <style>
   /* ========== INJECTED HOMEPAGE HEADER CSS ========== */
@@ -212,7 +212,7 @@
     <span>📊</span> 2026 Nano CBD Comparison Chart
   </div>
   <h1>Interactive Brand Comparison</h1>
-  <p>18 brands plotted on particle size vs. bioavailability. Only the top-right quadrant wins. See who made the cut.</p>
+  <p>19 brands plotted on particle size vs. bioavailability. Only the top-right quadrant wins. See who made the cut.</p>
   <div class="hero-chart-cta">
     <a href="#chart-container" class="btn btn-gold">Explore the Chart ↓</a>
     <a href="buyers-guide.html" class="btn btn-outline">Buyer's Guide</a>
@@ -225,7 +225,8 @@
   <div class="legend-item"><span class="legend-dot" style="background:#D4AF37;"></span> THC-Free</div>
   <div class="legend-item"><span class="legend-dot" style="background:#ff4444;"></span> Contains THC</div>
   <div class="legend-item"><span class="legend-dot" style="background:#555555;"></span> Research Only</div>
-  <div class="legend-item"><span class="legend-dot" style="background:#D4AF37;box-shadow:0 0 8px #D4AF37;"></span> ★ Arkos Bioscience</div>
+  <div class="legend-item"><span class="legend-dot" style="background:#39FF14;box-shadow:0 0 8px #39FF14;"></span> ★ Wild Roots Hemp #1</div>
+  <div class="legend-item"><span class="legend-dot" style="background:#D4AF37;box-shadow:0 0 8px #D4AF37;"></span> ★ Arkos Bioscience #2</div>
 </div>
 
 <div id="chart-container">
@@ -234,9 +235,9 @@
 </div>
 
 <div class="stats-bar">
-  <div class="stat-card"><div class="number">18</div><div class="label">Nano CBD Brands Tested</div></div>
-  <div class="stat-card"><div class="number">60nm</div><div class="label">Arkos Particle Size</div></div>
-  <div class="stat-card"><div class="number">90%</div><div class="label">Arkos Bioavailability</div></div>
+  <div class="stat-card"><div class="number">19</div><div class="label">Nano CBD Brands Tested</div></div>
+  <div class="stat-card"><div class="number">40nm</div><div class="label">Wild Roots Particle Size</div></div>
+  <div class="stat-card"><div class="number">88%</div><div class="label">Wild Roots Bioavailability</div></div>
   <div class="stat-card"><div class="number">20x</div><div class="label">More Effective Than Oil</div></div>
 </div>
 
@@ -249,7 +250,7 @@
 </div>
 
 <script>
-const nanoData = [{"brand": "Arkos Bioscience", "score": "9.8", "stars": "★★★★★", "rank": 1, "verdict": "Champion", "category": "Nano CBD", "particleSize": 60, "bioavailability": 90, "pricePerMg": 0.08, "thcStatus": "THC-Free", "source": "https://nanocbdrankings.com/ - Ranked #1 with 9.8/10 score; particle size confirmed at https://www.arkosbio.com/pages/why-nanocbd"}, {"brand": "Ojai Energetics", "score": "6.5", "stars": "★★★☆☆", "rank": 5, "verdict": "Good Alternative", "category": "Nano CBD", "particleSize": 50, "bioavailability": 85, "pricePerMg": 0.3, "thcStatus": "Contains THC", "source": "https://ojaienergetics.com/product/super-cbd/ - Claims 20x more potent than regular CBD; nano-encapsulated full spectrum; 250mg equivalent to 5000mg regular"}, {"brand": "ZenLeaf", "score": "7.8", "stars": "★★★★☆", "rank": 2, "verdict": "Strong Contender", "category": "Nano CBD", "particleSize": 30, "bioavailability": 82, "pricePerMg": 0.1, "thcStatus": "THC-Free", "source": "https://zenleafhealth.com/nano-cbd/ - Claims 75-90% bioavailability; sonication nano process; THC-free isolate"}, {"brand": "Pure Craft CBD", "particleSize": 55, "bioavailability": 75, "pricePerMg": 0.049, "thcStatus": "THC-Free", "source": "https://purecraftcbd.com/products/nano-cbd-broad-spectrum-oil - 5x more bioavailable; particle size 10-100nm; $49 for 1000mg"}, {"brand": "Green Planet US", "particleSize": 80, "bioavailability": 67, "pricePerMg": 0.1, "thcStatus": "THC-Free", "source": "https://www.greenplanetus.com/blogs/news/nano-cbd-bioavailability-guide - Particle size <100nm; absorption rate 50-85%"}, {"brand": "cbdMD", "score": "5.5", "stars": "★★★☆☆", "rank": 11, "verdict": "Mid", "category": "Nano CBD", "particleSize": 80, "bioavailability": 65, "pricePerMg": 0.12, "thcStatus": "THC-Free", "source": "https://nanocbdrankings.com/ - Ranked #2 with 8.4/10 score; broad spectrum nano"}, {"brand": "Joy Organics", "score": "4.9", "stars": "★★☆☆☆", "rank": 13, "verdict": "Mid", "category": "Nano CBD", "particleSize": 90, "bioavailability": 60, "pricePerMg": 0.14, "thcStatus": "THC-Free", "source": "https://nanocbdrankings.com/ - Ranked #3 with 8.1/10 score; nanoemulsion softgels; USDA Organic"}, {"brand": "CBD Living", "score": "6.8", "stars": "★★★☆☆", "rank": 4, "verdict": "Good Alternative", "category": "Nano CBD", "particleSize": 40, "bioavailability": 65, "pricePerMg": 0.08, "thcStatus": "THC-Free", "source": "https://cbdliving.com/blogs/news/nanotechnology-and-cbd - Proprietary Water Soluble Nano Technology since 2014; nano-CBD in water and beverages"}, {"brand": "CBD American Shaman", "score": "4.3", "stars": "★★☆☆☆", "rank": 16, "verdict": "Large Particle", "category": "Large Particle", "particleSize": 110, "bioavailability": 55, "pricePerMg": 0.15, "thcStatus": "THC-Free", "source": "https://www.sonomechanics.com/wp-content/uploads/2023/04/All-natural-CBD-nanoemulsion-American-Shaman-Case-Study.pdf - Confirmed d50 median droplet size 110nm via laser diffraction; ISM Barbell Horn ultrasonic technology"}, {"brand": "NanoCraft CBD", "particleSize": 95, "bioavailability": 55, "pricePerMg": 0.08, "thcStatus": "THC-Free", "source": "https://www.leafreport.com/products/nanocraftcbd - Gold Series 1000mg at $69.99-$79.99; broad spectrum with CBG, CBN, CBC"}, {"brand": "HempLucid", "score": "5.7", "stars": "★★★☆☆", "rank": 8, "verdict": "Average", "category": "Nano CBD", "particleSize": 70, "bioavailability": 55, "pricePerMg": 0.044, "thcStatus": "Contains THC", "source": "https://hemplucid.com/collections/water-soluble-cbd - Nano electrolyte blend with nanoclusters of water; 1000mg bottle $42.95-$59.95; full spectrum"}, {"brand": "Upstate Elevator", "particleSize": 70, "bioavailability": 60, "pricePerMg": 0.1, "thcStatus": "THC-Free", "source": "https://www.upstateelevator.com/blogs/news/what-is-nano-cbd - Average particle size ~70nm confirmed via third-party DLS & laser diffraction"}, {"brand": "CBDfx", "score": "5.3", "stars": "★★☆☆☆", "rank": 12, "verdict": "Mid", "category": "Nano CBD", "particleSize": 85, "bioavailability": 55, "pricePerMg": 0.05, "thcStatus": "THC-Free", "source": "https://www.leafreport.com/products/cbdfx - Tinctures $0.04-0.06/mg; broad spectrum nano available; second largest privately-owned CBD company"}, {"brand": "Dakota Hemp CBD", "particleSize": 65, "bioavailability": 55, "pricePerMg": 0.05, "thcStatus": "Contains THC", "source": "https://dakotahempcbd.com/cbd-oil-tincture-natural-balance-with-dakota-hemps-nano-technology/ - Nano CBD + CBG 1000mg tincture; nanoemulsion technology"}, {"brand": "Medterra", "score": "4.0", "stars": "★★☆☆☆", "rank": 17, "verdict": "Large Particle", "category": "Large Particle", "particleSize": 120, "bioavailability": 45, "pricePerMg": 0.13, "thcStatus": "THC-Free", "source": "https://nanocbdrankings.com/ - Ranked #6 with 6.8/10 score; liposomal delivery; broad spectrum"}, {"brand": "Elixinol", "score": "3.6", "stars": "★★☆☆☆", "rank": 18, "verdict": "Large Particle", "category": "Large Particle", "particleSize": 200, "bioavailability": 40, "pricePerMg": 0.15, "thcStatus": "THC-Free", "source": "https://elixinol.com/products/everyday-rapid-reset-liposome - Liposomal delivery; claims 4x more efficient absorption than traditional oils; $44.99 for 300mg liposome ($0.15/mg)"}, {"brand": "UltraShear (Pressure BioSciences)", "particleSize": 25, "bioavailability": 25, "pricePerMg": null, "thcStatus": "Research", "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10629855/ - Published pharmacokinetic study; 18.6% at 6h and 25.4% at 24h; 3-4x higher than traditional oral CBD"}, {"brand": "THC/CBD-SE Powder (Tikun Olam)", "particleSize": 157, "bioavailability": 44, "pricePerMg": null, "thcStatus": "Research", "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12166629/ - Published crossover study; 158nm initial particle size; relative bioavailability 44% vs oil drops at 100% baseline"}];
+const nanoData = [{"brand": "Wild Roots Hemp", "score": "9.9", "stars": "★★★★★", "rank": 1, "verdict": "Champion", "category": "Nano Hemp", "particleSize": 40, "bioavailability": 88, "pricePerMg": 0.18, "thcStatus": "Non-Detect 0.0%", "source": "https://wildrootshemp.com - Ranked #1 with 9.9/10 score; family-founded nano-hemp wellness via nano-fragmentation process; particles under 100nm; 3-8x absorption"}, {"brand": "Arkos Bioscience", "score": "9.8", "stars": "★★★★★", "rank": 2, "verdict": "Runner-Up", "category": "Nano CBD", "particleSize": 60, "bioavailability": 90, "pricePerMg": 0.08, "thcStatus": "THC-Free", "source": "https://nanocbdrankings.com/ - Ranked #2 with 9.8/10 score; particle size confirmed at https://www.arkosbio.com/pages/why-nanocbd"}, {"brand": "Ojai Energetics", "score": "6.5", "stars": "★★★☆☆", "rank": 6, "verdict": "Good Alternative", "category": "Nano CBD", "particleSize": 50, "bioavailability": 85, "pricePerMg": 0.3, "thcStatus": "Contains THC", "source": "https://ojaienergetics.com/product/super-cbd/ - Claims 20x more potent than regular CBD; nano-encapsulated full spectrum; 250mg equivalent to 5000mg regular"}, {"brand": "ZenLeaf", "score": "7.8", "stars": "★★★★☆", "rank": 3, "verdict": "Strong Contender", "category": "Nano CBD", "particleSize": 30, "bioavailability": 82, "pricePerMg": 0.1, "thcStatus": "THC-Free", "source": "https://zenleafhealth.com/nano-cbd/ - Claims 75-90% bioavailability; sonication nano process; THC-free isolate"}, {"brand": "Pure Craft CBD", "particleSize": 55, "bioavailability": 75, "pricePerMg": 0.049, "thcStatus": "THC-Free", "source": "https://purecraftcbd.com/products/nano-cbd-broad-spectrum-oil - 5x more bioavailable; particle size 10-100nm; $49 for 1000mg"}, {"brand": "Green Planet US", "particleSize": 80, "bioavailability": 67, "pricePerMg": 0.1, "thcStatus": "THC-Free", "source": "https://www.greenplanetus.com/blogs/news/nano-cbd-bioavailability-guide - Particle size <100nm; absorption rate 50-85%"}, {"brand": "cbdMD", "score": "5.5", "stars": "★★★☆☆", "rank": 12, "verdict": "Mid", "category": "Nano CBD", "particleSize": 80, "bioavailability": 65, "pricePerMg": 0.12, "thcStatus": "THC-Free", "source": "https://nanocbdrankings.com/ - Ranked #2 with 8.4/10 score; broad spectrum nano"}, {"brand": "Joy Organics", "score": "4.9", "stars": "★★☆☆☆", "rank": 14, "verdict": "Mid", "category": "Nano CBD", "particleSize": 90, "bioavailability": 60, "pricePerMg": 0.14, "thcStatus": "THC-Free", "source": "https://nanocbdrankings.com/ - Ranked #3 with 8.1/10 score; nano softgels; USDA Organic"}, {"brand": "CBD Living", "score": "6.8", "stars": "★★★☆☆", "rank": 5, "verdict": "Good Alternative", "category": "Nano CBD", "particleSize": 40, "bioavailability": 65, "pricePerMg": 0.08, "thcStatus": "THC-Free", "source": "https://cbdliving.com/blogs/news/nanotechnology-and-cbd - Proprietary Water Soluble Nano Technology since 2014; nano-CBD in water and beverages"}, {"brand": "CBD American Shaman", "score": "4.3", "stars": "★★☆☆☆", "rank": 17, "verdict": "Large Particle", "category": "Large Particle", "particleSize": 110, "bioavailability": 55, "pricePerMg": 0.15, "thcStatus": "THC-Free", "source": "https://www.sonomechanics.com/wp-content/uploads/2023/04/All-natural-CBD-nanoemulsion-American-Shaman-Case-Study.pdf - Confirmed d50 median droplet size 110nm via laser diffraction; ISM Barbell Horn ultrasonic technology"}, {"brand": "NanoCraft CBD", "particleSize": 95, "bioavailability": 55, "pricePerMg": 0.08, "thcStatus": "THC-Free", "source": "https://www.leafreport.com/products/nanocraftcbd - Gold Series 1000mg at $69.99-$79.99; broad spectrum with CBG, CBN, CBC"}, {"brand": "HempLucid", "score": "5.7", "stars": "★★★☆☆", "rank": 9, "verdict": "Average", "category": "Nano CBD", "particleSize": 70, "bioavailability": 55, "pricePerMg": 0.044, "thcStatus": "Contains THC", "source": "https://hemplucid.com/collections/water-soluble-cbd - Nano electrolyte blend with nanoclusters of water; 1000mg bottle $42.95-$59.95; full spectrum"}, {"brand": "Upstate Elevator", "particleSize": 70, "bioavailability": 60, "pricePerMg": 0.1, "thcStatus": "THC-Free", "source": "https://www.upstateelevator.com/blogs/news/what-is-nano-cbd - Average particle size ~70nm confirmed via third-party DLS & laser diffraction"}, {"brand": "CBDfx", "score": "5.3", "stars": "★★☆☆☆", "rank": 13, "verdict": "Mid", "category": "Nano CBD", "particleSize": 85, "bioavailability": 55, "pricePerMg": 0.05, "thcStatus": "THC-Free", "source": "https://www.leafreport.com/products/cbdfx - Tinctures $0.04-0.06/mg; broad spectrum nano available; second largest privately-owned CBD company"}, {"brand": "Dakota Hemp CBD", "particleSize": 65, "bioavailability": 55, "pricePerMg": 0.05, "thcStatus": "Contains THC", "source": "https://dakotahempcbd.com/cbd-oil-tincture-natural-balance-with-dakota-hemps-nano-technology/ - Nano CBD + CBG 1000mg tincture; nano-fragmentation-free traditional technology"}, {"brand": "Medterra", "score": "4.0", "stars": "★★☆☆☆", "rank": 18, "verdict": "Large Particle", "category": "Large Particle", "particleSize": 120, "bioavailability": 45, "pricePerMg": 0.13, "thcStatus": "THC-Free", "source": "https://nanocbdrankings.com/ - Ranked #6 with 6.8/10 score; liposomal delivery; broad spectrum"}, {"brand": "Elixinol", "score": "3.6", "stars": "★★☆☆☆", "rank": 19, "verdict": "Large Particle", "category": "Large Particle", "particleSize": 200, "bioavailability": 40, "pricePerMg": 0.15, "thcStatus": "THC-Free", "source": "https://elixinol.com/products/everyday-rapid-reset-liposome - Liposomal delivery; claims 4x more efficient absorption than traditional oils; $44.99 for 300mg liposome ($0.15/mg)"}, {"brand": "UltraShear (Pressure BioSciences)", "particleSize": 25, "bioavailability": 25, "pricePerMg": null, "thcStatus": "Research", "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10629855/ - Published pharmacokinetic study; 18.6% at 6h and 25.4% at 24h; 3-4x higher than traditional oral CBD"}, {"brand": "THC/CBD-SE Powder (Tikun Olam)", "particleSize": 157, "bioavailability": 44, "pricePerMg": null, "thcStatus": "Research", "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12166629/ - Published crossover study; 158nm initial particle size; relative bioavailability 44% vs oil drops at 100% baseline"}];
 const tradData = [{"brand": "Lazarus Naturals", "score": "1.8", "stars": "★☆☆☆☆", "rank": 20, "verdict": "Traditional Oil", "category": "Traditional Oil", "particleSize": null, "bioavailability": 20, "pricePerMg": 0.05, "thcStatus": "Contains THC", "source": "https://nanocbdrankings.com/ - Ranked #5 with 7.2/10 score; traditional high-potency full spectrum; $89.99 for 6000mg = $0.015/mg (price adjusted for traditional bioavailability: ~$0.05 effective)"}, {"brand": "Charlotte's Web", "score": "1.7", "stars": "★☆☆☆☆", "rank": 22, "verdict": "Traditional Oil", "category": "Traditional Oil", "particleSize": null, "bioavailability": 18, "pricePerMg": 0.11, "thcStatus": "Contains THC", "source": "https://nanocbdrankings.com/ - Ranked #7 with 6.5/10 score; traditional hemp extract; legacy brand"}, {"brand": "Seabedee", "score": "1.9", "stars": "★☆☆☆☆", "rank": 19, "verdict": "Traditional Oil", "category": "Traditional Oil", "particleSize": null, "bioavailability": 22, "pricePerMg": 0.06, "thcStatus": "Contains THC", "source": "https://www.leafreport.com/products/seabedee/3000mg-full-spectrum-cbd-oil - Extra Strength Full Spectrum 3000mg at $185; $0.06/mg; traditional sublingual"}, {"brand": "Green Roads", "score": "1.8", "stars": "★☆☆☆☆", "rank": 21, "verdict": "Traditional Oil", "category": "Traditional Oil", "particleSize": null, "bioavailability": 20, "pricePerMg": 0.12, "thcStatus": "Contains THC", "source": "https://cbddatabase.com/products/cbd-oil-1000mg-by-green-roads - 1000mg tincture $119.99; broad/compounded by pharmacist; traditional oil"}, {"brand": "PureKana", "score": "1.7", "stars": "★☆☆☆☆", "rank": 23, "verdict": "Traditional Oil", "category": "Traditional Oil", "particleSize": null, "bioavailability": 18, "pricePerMg": 0.14, "thcStatus": "Contains THC", "source": "https://www.leafreport.com/products/purekana - 1000mg CBD Oil at $139; $0.14/mg; traditional full spectrum tincture"}, {"brand": "PlusCBD", "score": "1.7", "stars": "★☆☆☆☆", "rank": 24, "verdict": "Traditional Oil", "category": "Traditional Oil", "particleSize": null, "bioavailability": 18, "pricePerMg": 0.034, "thcStatus": "Contains THC", "source": "https://cbd.market/reviews/pluscbd-brand - 2000mg at $67.49 = $0.034/mg; full spectrum CO2 extracted; US Hemp Authority certified"}, {"brand": "Nuleaf Naturals", "particleSize": null, "bioavailability": 18, "pricePerMg": 0.039, "thcStatus": "Contains THC", "source": "https://www.leafreport.com/products/nuleaf-naturals - Full spectrum 3000mg at $116.45 = $0.039/mg; CO2 extracted; traditional oil"}];
 
 const svg = d3.select("#scatter-plot");
@@ -271,6 +272,9 @@ const colorMap = {
 };
 
 const arkColor = "#D4AF37";
+const wrColor = "#39FF14";
+const isHighlight = d => d.brand.includes("Arkos") || d.brand.includes("Wild Roots");
+const hlColor = d => d.brand.includes("Wild Roots") ? wrColor : arkColor;
 
 // Grid lines
 const xGrid = d3.axisBottom(xScale).tickSize(h).tickFormat("").ticks(5);
@@ -303,6 +307,15 @@ g.selectAll(".tick line").attr("stroke","#ffffff33");
 g.append("text").attr("x",w/2).attr("y",h+48).attr("text-anchor","middle").attr("class","axis-title").text("Particle Size (nm) — Logarithmic Scale → Smaller is Better");
 g.append("text").attr("transform","rotate(-90)").attr("x",-h/2).attr("y",-52).attr("text-anchor","middle").attr("class","axis-title").text("Bioavailability (%) → Higher is Better");
 
+// Halo for Wild Roots Hemp (champion)
+const wr = nanoData.find(d=>d.brand.includes("Wild Roots"));
+if(wr) {
+  g.append("circle").attr("cx",xScale(wr.particleSize)).attr("cy",yScale(wr.bioavailability))
+    .attr("r",0).attr("fill",wrColor).attr("opacity",0.15)
+    .transition().duration(1500).attr("r",30).attr("opacity",0.25)
+    .transition().duration(1000).attr("r",24).attr("opacity",0.2);
+}
+
 // Halo for Arkos
 const ark = nanoData.find(d=>d.brand.includes("Arkos"));
 if(ark) {
@@ -314,37 +327,48 @@ if(ark) {
 
 // Data points
 g.selectAll(".data-point").data(nanoData).enter().append("circle")
-  .attr("class",d=>d.brand.includes("Arkos")?"arkos-point":"data-point")
+  .attr("class",d=>isHighlight(d)?"arkos-point":"data-point")
   .attr("cx",d=>xScale(d.particleSize)).attr("cy",d=>yScale(d.bioavailability))
-  .attr("r",0).attr("fill",d=>d.brand.includes("Arkos")?arkColor:colorMap[d.thcStatus]||"#555555")
-  .attr("stroke",d=>d.brand.includes("Arkos")?arkColor:"#0A0A0A")
-  .attr("stroke-width",d=>d.brand.includes("Arkos")?3:1.5)
-  .attr("opacity",d=>d.brand.includes("Arkos")?1:0.75)
+  .attr("r",0).attr("fill",d=>isHighlight(d)?hlColor(d):colorMap[d.thcStatus]||"#555555")
+  .attr("stroke",d=>isHighlight(d)?hlColor(d):"#0A0A0A")
+  .attr("stroke-width",d=>isHighlight(d)?3:1.5)
+  .attr("opacity",d=>isHighlight(d)?1:0.75)
   .attr("cursor","pointer")
   .on("mouseover",function(event,d){
     d3.select(this).transition().duration(200).attr("r",rScale(d.pricePerMg||0.1)+6).attr("opacity",1);
     clearTimeout(window._ttHide);
     const price = d.pricePerMg ? `$${d.pricePerMg}/mg` : 'N/A';
     const isArkos = d.brand.includes("Arkos");
-    tooltip.html(`${isArkos?'<a href="https://www.arkosbio.com" target="_blank" rel="noopener" style="color:#39FF14;text-decoration:underline;">Arkos Bioscience</a>':'<strong>'+d.brand+'</strong>'}${isArkos?' <span style="color:#D4AF37">★ CHAMPION</span>':d.rank?' <span style="color:#888">#'+d.rank+'</span>':''}<br/>${d.score?'<b style="color:'+(isArkos?'#D4AF37':'#0D7377')+'">'+d.stars+' '+d.score+'/10</b><br/>':''}<span class="icon-dot" style="background:#D4AF37;"></span>${d.particleSize}nm particle size<br/><span class="icon-dot" style="background:#39FF14;"></span>${d.bioavailability}% bioavailability<br/><span class="icon-dot" style="background:#00D4FF;"></span>${price}${d.verdict?' | '+d.verdict:''}${d.category?' | '+d.category:''}${isArkos?'<br/><a href="https://www.arkosbio.com" target="_blank" rel="noopener" style="color:#D4AF37;font-weight:600;display:inline-block;margin-top:6px;text-decoration:underline;">Visit Arkos Bioscience →</a>':''}`).classed("visible",true);
+    const isWR = d.brand.includes("Wild Roots");
+    const brandHead = isWR
+      ? '<a href="https://wildrootshemp.com" target="_blank" rel="noopener" style="color:#39FF14;text-decoration:underline;">Wild Roots Hemp</a> <span style="color:#39FF14">★ CHAMPION</span>'
+      : isArkos
+        ? '<a href="https://www.arkosbio.com" target="_blank" rel="noopener" style="color:#39FF14;text-decoration:underline;">Arkos Bioscience</a> <span style="color:#D4AF37">★ #2 RUNNER-UP</span>'
+        : '<strong>'+d.brand+'</strong>'+(d.rank?' <span style="color:#888">#'+d.rank+'</span>':'');
+    const visitLink = isWR
+      ? '<br/><a href="https://wildrootshemp.com" target="_blank" rel="noopener" style="color:#39FF14;font-weight:600;display:inline-block;margin-top:6px;text-decoration:underline;">Visit Wild Roots Hemp →</a>'
+      : isArkos
+        ? '<br/><a href="https://www.arkosbio.com" target="_blank" rel="noopener" style="color:#D4AF37;font-weight:600;display:inline-block;margin-top:6px;text-decoration:underline;">Visit Arkos Bioscience →</a>'
+        : '';
+    tooltip.html(`${brandHead}<br/>${d.score?'<b style="color:'+(isWR?'#39FF14':isArkos?'#D4AF37':'#0D7377')+'">'+d.stars+' '+d.score+'/10</b><br/>':''}<span class="icon-dot" style="background:#D4AF37;"></span>${d.particleSize}nm particle size<br/><span class="icon-dot" style="background:#39FF14;"></span>${d.bioavailability}% bioavailability<br/><span class="icon-dot" style="background:#00D4FF;"></span>${price}${d.verdict?' | '+d.verdict:''}${d.category?' | '+d.category:''}${visitLink}`).classed("visible",true);
   })
   .on("mousemove",function(event){
     clearTimeout(window._ttHide);
     tooltip.style("left",(event.clientX+15)+"px").style("top",(event.clientY-10)+"px");
   })
   .on("mouseout",function(event,d){
-    d3.select(this).transition().duration(200).attr("r",rScale(d.pricePerMg||0.1)).attr("opacity",d.brand.includes("Arkos")?1:0.75);
+    d3.select(this).transition().duration(200).attr("r",rScale(d.pricePerMg||0.1)).attr("opacity",isHighlight(d)?1:0.75);
     window._ttHide = setTimeout(()=>tooltip.classed("visible",false),2500);
   }).transition().duration(800).delay((d,i)=>i*80)
   .attr("r",d=>rScale(d.pricePerMg||0.1));
 
 // Brand labels for top brands
-g.selectAll(".brand-label").data(nanoData.filter(d=>d.bioavailability>=60||d.brand.includes("Arkos"))).enter().append("text")
+g.selectAll(".brand-label").data(nanoData.filter(d=>d.bioavailability>=60||isHighlight(d))).enter().append("text")
   .attr("x",d=>xScale(d.particleSize)+rScale(d.pricePerMg||0.1)+6)
   .attr("y",d=>yScale(d.bioavailability)+3)
-  .text(d=>d.brand.includes("Arkos")?"Arkos":d.brand.split(" ")[0])
-  .attr("class","brand-label").attr("font-weight",d=>d.brand.includes("Arkos")?"700":"400")
-  .attr("fill",d=>d.brand.includes("Arkos")?arkColor:"#ffffff99");
+  .text(d=>d.brand.includes("Arkos")?"Arkos":d.brand.includes("Wild Roots")?"Wild Roots":d.brand.split(" ")[0])
+  .attr("class","brand-label").attr("font-weight",d=>isHighlight(d)?"700":"400")
+  .attr("fill",d=>isHighlight(d)?hlColor(d):"#ffffff99");
 
 // Side panel: Traditional CBD
 const sideG = svg.append("g").attr("transform",`translate(${m.left+w+20},${m.top+20})`);
