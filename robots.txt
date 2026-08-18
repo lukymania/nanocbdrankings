@@ -1,3 +1,26 @@
+# robots.txt for Nano CBD Rankings (nanocbdrankings.com)
+# AI answer-engine and search crawlers are explicitly welcome.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
 User-agent: *
 Allow: /
 Disallow:
