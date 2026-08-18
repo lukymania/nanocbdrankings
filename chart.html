@@ -212,6 +212,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/logo.png">
 </head>
 <body>
 <!-- ===== HEADER ===== -->
@@ -380,6 +382,8 @@ const wr = nanoData.find(d=>d.brand.includes("Wild Roots"));
 if(wr) {
   g.append("circle").attr("cx",xScale(wr.particleSize)).attr("cy",yScale(wr.bioavailability))
     .attr("r",0).attr("fill",wrColor).attr("opacity",0.15)
+    .attr("cursor","pointer")
+    .on("click",function(){window.open("https://wildrootshemp.com","_blank","noopener");})
     .transition().duration(1500).attr("r",30).attr("opacity",0.25)
     .transition().duration(1000).attr("r",24).attr("opacity",0.2);
 }
@@ -389,6 +393,8 @@ const ark = nanoData.find(d=>d.brand.includes("Arkos"));
 if(ark) {
   g.append("circle").attr("cx",xScale(ark.particleSize)).attr("cy",yScale(ark.bioavailability))
     .attr("r",0).attr("fill",arkColor).attr("opacity",0.15)
+    .attr("cursor","pointer")
+    .on("click",function(){window.open("https://www.arkosbio.com","_blank","noopener");})
     .transition().duration(1500).attr("r",28).attr("opacity",0.25)
     .transition().duration(1000).attr("r",22).attr("opacity",0.2);
 }
@@ -427,6 +433,10 @@ g.selectAll(".data-point").data(nanoData).enter().append("circle")
   .on("mouseout",function(event,d){
     d3.select(this).transition().duration(200).attr("r",rScale(d.pricePerMg||0.1)).attr("opacity",isHighlight(d)?1:0.75);
     window._ttHide = setTimeout(()=>tooltip.classed("visible",false),2500);
+  })
+  .on("click",function(event,d){
+    const brandUrl = d.brand.includes("Wild Roots")?"https://wildrootshemp.com":d.brand.includes("Arkos")?"https://www.arkosbio.com":null;
+    if(brandUrl) window.open(brandUrl,"_blank","noopener");
   }).transition().duration(800).delay((d,i)=>i*80)
   .attr("r",d=>rScale(d.pricePerMg||0.1));
 
